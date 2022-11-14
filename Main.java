@@ -1,27 +1,36 @@
 import java.util.Scanner;
+import java.math.*;
+
+import static java.lang.System.exit;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-        //Эта программа посчитает количество елементов массиве которые больше чем среднее арифметическое елементов массива(работать будет 5 раз)
-        for(int j = 0; j < 5;j++){
-            int n = input.nextInt();
-            int sum = 0;
-            int[] a = new int[n];
-            for(int i = 0; i< n; i++){
-                a[i] = input.nextInt();
-            }
-            for(int i = 0; i< n; i++){
-                sum += a[i];
-            }
-            int middle = sum / n;
-            int cnt = 0;
-            for(int i = 0; i< n; i++){
-                if(a[i] > middle){
-                    cnt++;
-                }
-            }
-            System.out.println(cnt);
+        System.out.println(pow2(2));
+        int n = input.nextInt();
+        char[] chars = new char[pow2(n)];
+        for(int i = 0; i < chars.length; i++){
+            chars[i] = (char) input.nextInt();
         }
+        reverse(chars);
+        Box box = new Box("Some value");
+        System.out.println(box.value);
 
     }
+    static public Integer pow2(Integer n){
+        return n * n;
+    }
+
+
+    static public void reverse(char[] s){
+        for (int i = s.length - 1; i >= 0; i--){
+            System.out.print(s[i]);
+        }
+    }
 }
+
+
+
+
+
+
